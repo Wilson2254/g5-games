@@ -1,9 +1,10 @@
 <template>
-  <div id="app" class="home-page">
+  <div id="app">
     <top-header />
     <router-view />
   </div>
 </template>
+
 <script>
 import TopHeader from './components/TopHeader/TopHeader.vue'
 

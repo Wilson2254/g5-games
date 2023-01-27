@@ -6,4 +6,4 @@ export default {
   name: 'HomePage',
 }
 </script>
-<style lang="scss" src="HomePage.scss" />
+<!--<style lang="scss" src="HomePage.scss" />-->

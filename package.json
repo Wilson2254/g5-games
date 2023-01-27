@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dev": "vue-cli-service serve"
   },
   "dependencies": {
-    "@vue/cli-plugin-router": "^5.0.8",
     "axios": "^1.2.5",
     "core-js": "^3.8.3",
     "eslint-config-airbnb": "^19.0.4",
@@ -21,6 +20,7 @@
     "@babel/eslint-parser": "^7.19.1",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
