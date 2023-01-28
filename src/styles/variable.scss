@@ -1,1 +1,22 @@
-$main-red: #DA0916;
+// colors
+$main-blue: #5775A9;
+
+// break-points
+$xs-min: 320px;
+$xs-min-avg: 345px;
+$xs-avg: 360px;
+$xs-mid: 375px;
+$xs-spec: 414px;
+$xs: 480px;
+$xs-large: 520px;
+$sm: 768px;
+$tablet-horizontal: 1024px;
+$md: 1280px;
+$lg: 1366px;
+$lg-large: 1440px;
+$xlg: 1600px;
+$xlg-max: 1920px;
+
+@mixin padding-base {
+  padding: 0 267px;
+}

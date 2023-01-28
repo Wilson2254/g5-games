@@ -13,3 +13,5 @@ export default {
   components: { TopHeader },
 }
 </script>
+
+<style lang="scss" src="./styles/base.scss" />
