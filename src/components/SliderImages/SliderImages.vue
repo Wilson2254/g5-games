@@ -1,20 +1,34 @@
 <template>
   <div class="slider-images">
-    <swiper>
-      <swiper-slide>Slide 1</swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
+    <swiper :options="swiperOptions">
+      <swiper-slide v-for="(item, index) in sliderItems" :key="index">
+        <img :src="item" alt="" />
+      </swiper-slide>
     </swiper>
   </div>
 </template>
 
 <script>
-import Swiper from 'swiper'
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'SliderImages',
   components: {
     Swiper,
+    SwiperSlide,
+  },
+  props: {
+    sliderItems: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  data() {
+    return {
+      swiperOptions: {
+        slidesPerView: 3,
+      },
+    }
   },
 }
 </script>
