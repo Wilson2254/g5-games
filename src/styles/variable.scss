@@ -1,5 +1,9 @@
 // colors
 $main-blue: #5775A9;
+$default-white: #ffffff;
+$default-black: #000000;
+$gray-dark: #A1A6B3;
+
 
 // break-points
 $xs-min: 320px;
@@ -17,6 +21,7 @@ $lg-large: 1440px;
 $xlg: 1600px;
 $xlg-max: 1920px;
 
+//mixins
 @mixin padding-base {
   padding: 0 267px;
 }
