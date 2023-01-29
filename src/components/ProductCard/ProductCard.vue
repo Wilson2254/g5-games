@@ -6,7 +6,7 @@
           v-if="cardLabel"
           :label-name="cardLabel.name"
           :label-color="cardLabel.color"
-          :label-style:="cardLabel.positionClass"
+          :label-style="cardLabel.positionClass"
         />
         <img
           class="product-card__image"

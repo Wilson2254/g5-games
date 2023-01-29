@@ -36,3 +36,8 @@ $font-family-inter: 'Inter', 'Roboto', Arial, sans-serif !default;
 @mixin padding-base {
   padding: 0 14%;
 }
+
+@mixin max-width {
+  max-width: 1386px;
+  margin: 0 auto;
+}
