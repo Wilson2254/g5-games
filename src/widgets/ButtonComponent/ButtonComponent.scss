@@ -5,7 +5,7 @@
   cursor: pointer;
   background-color: $default-white;
   font-weight: 600;
-  transition: 0.2s;
+  transition: $default-transition;
 
   &:hover{
     border: 1px solid $gray-dark;

@@ -1,10 +1,29 @@
 <template>
-  <div class="slider-images">
-    <swiper :options="swiperOptions">
-      <swiper-slide v-for="(item, index) in sliderItems" :key="index">
-        <img :src="item" alt="" />
+  <div
+    class="slider-images"
+    :class="{ 'slider-images--loading': isSliderLoading }"
+  >
+    <swiper :options="swiperOptions" class="slider-images__wrapper">
+      <swiper-slide
+        v-for="(item, index) in sliderItems"
+        :key="index"
+        class="slider-images__item"
+      >
+        <img
+          class="slider-images__item-img"
+          loading="lazy"
+          :src="item"
+          :alt="`Изображение собаки ${index + 1}`"
+        />
       </swiper-slide>
     </swiper>
+    <div class="slider-images__navigation-wrapper-item prev">
+      <span class="arrow" />
+    </div>
+    <div class="slider-images__navigation-wrapper-item next">
+      <span class="arrow" />
+    </div>
+    <div class="slider-images__pagination"></div>
   </div>
 </template>
 
@@ -22,13 +41,31 @@ export default {
       type: Array,
       default: () => [],
     },
+    isSliderLoading: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
       swiperOptions: {
         slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 30,
+        lazy: true,
+        navigation: {
+          nextEl: `.slider-images__navigation-wrapper-item.next`,
+          prevEl: `.slider-images__navigation-wrapper-item.prev`,
+        },
+        pagination: {
+          el: '.slider-images__pagination',
+          type: 'bullets',
+          clickable: true,
+        },
       },
     }
   },
 }
 </script>
+
+<style lang="scss" src="./SliderImages.scss" />
