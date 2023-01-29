@@ -29,6 +29,9 @@ $z-index-upper: 1;
 //transition
 $default-transition: 0.2s;
 
+//fonts
+$font-family-inter: 'Inter', 'Roboto', Arial, sans-serif !default;
+
 //mixins
 @mixin padding-base {
   padding: 0 267px;

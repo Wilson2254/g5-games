@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import HeaderLogo from '../../assets/Logo.svg'
+import HeaderLogo from '../../assets/images/Logo.svg'
 import ButtonComponent from '../../widgets/ButtonComponent/ButtonComponent.vue'
 
 export default {

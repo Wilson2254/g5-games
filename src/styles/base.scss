@@ -1,4 +1,6 @@
+@import './fonts.scss';
 body {
   margin: 0;
   padding-bottom: 14px;
+  font-family: $font-family-inter;
 }
