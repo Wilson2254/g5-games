@@ -38,3 +38,4 @@ export default {
   },
 }
 </script>
+<style scoped lang="scss" src="./ProductsContainer.scss" />

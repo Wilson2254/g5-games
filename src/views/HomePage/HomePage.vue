@@ -79,4 +79,4 @@ export default {
   },
 }
 </script>
-<style lang="scss" src="./HomePage.scss" />
+<style scoped lang="scss" src="./HomePage.scss" />

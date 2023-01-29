@@ -68,4 +68,4 @@ export default {
 }
 </script>
 
-<style lang="scss" src="./SliderImages.scss" />
+<style scoped lang="scss" src="./SliderImages.scss" />

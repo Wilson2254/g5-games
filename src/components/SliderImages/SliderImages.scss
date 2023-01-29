@@ -2,7 +2,6 @@
   margin-top: 16px;
   position: relative;
 
-
   &--loading {
     position: relative;
 
@@ -51,7 +50,7 @@
     border-radius: 4px;
   }
 
-  &__navigation-wrapper-item {
+  &__navigation-wrapper-item::v-deep {
     width: 48px;
     height: 48px;
     background: rgba(0, 0, 0, 0.5);
@@ -70,7 +69,7 @@
       background: rgba(0, 0, 0, 0.8);
     }
 
-    .arrow{
+    .arrow {
       border: solid $default-white;
       border-width: 0 2px 2px 0;
       display: inline-block;
@@ -80,7 +79,7 @@
     &.prev {
       left: 16px;
 
-      .arrow{
+      .arrow {
         margin-left: 8px;
         transform: rotate(135deg);
       }
@@ -97,10 +96,11 @@
 
     &.swiper-button-disabled {
       background: rgba(0, 0, 0, 0.3);
+      cursor: default;
     }
   }
 
-  &__pagination {
+  &__pagination::v-deep {
     margin-top: 16px;
     display: flex;
     justify-content: center;
@@ -109,18 +109,18 @@
     .swiper-pagination-bullet {
       width: 12px;
       height: 12px;
-      background-color: $gray-light;
+      background-color: $light-gray;
       opacity: 1;
       transition: $default-transition;
 
-      &:hover{
+      &:hover {
         opacity: 0.6;
       }
 
       &-active {
         background-color: $main-blue;
 
-        &:hover{
+        &:hover {
           opacity: 1;
           cursor: default;
         }

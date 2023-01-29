@@ -1,10 +1,35 @@
 <template>
   <div class="product-card">
     <div class="product-card__wrapper">
-      <img class="product-card__image" :src="cardImage" :alt="cardName" />
-      <div class="product-card__brand">
-        <span class="product-card__brand-title">Brand: </span>
-        <span class="product-card__brand-value">{{ cardBrand }} </span>
+      <img
+        class="product-card__image"
+        :src="cardImage"
+        :alt="cardName"
+        loading="lazy"
+      />
+      <div class="product-card__element-wrapper product-card__brand">
+        <span class="product-card__title-element bold">Brand: </span>
+        <span class="product-card__value-element">{{ cardBrand }} </span>
+      </div>
+      <div class="product-card__element-wrapper product-card__category">
+        <span class="product-card__title-element bold">Category: </span>
+        <span class="product-card__value-element">{{ cardCategory }} </span>
+      </div>
+      <div class="product-card__element-wrapper product-card__description">
+        <span class="product-card__title-element bold">Description: </span>
+        <span class="product-card__value-element">{{ cardDescription }} </span>
+      </div>
+      <div class="product-card__element-wrapper product-card__stock">
+        <span class="product-card__title-element bold">In stock: </span>
+        <transition name="flash" mode="out-in">
+          <span
+            :key="inStock"
+            class="product-card__value-element"
+            :class="{ 'out-of': !inStock }"
+          >
+            {{ inStock }}
+          </span>
+        </transition>
       </div>
     </div>
   </div>
@@ -39,5 +64,35 @@ export default {
       default: 'Not available',
     },
   },
+  data() {
+    return {
+      timerValue: null,
+      inStock: this.stockCount,
+    }
+  },
+  computed: {
+    randomInterval() {
+      return Math.floor(Math.random() * (5 - 1) + 1) * 1000
+    },
+  },
+  created() {
+    this.setupTimer()
+  },
+  beforeDestroy() {
+    clearInterval(this.timerValue)
+  },
+  methods: {
+    setupTimer() {
+      this.timerValue = setInterval(() => {
+        if (this.inStock <= 0) {
+          clearInterval(this.timerValue)
+        } else {
+          this.inStock -= 1
+        }
+      }, this.randomInterval)
+    },
+  },
 }
 </script>
+
+<style scoped lang="scss" src="./ProductCard.scss" />
