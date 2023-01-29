@@ -52,12 +52,11 @@ export default {
     productListWithLabelsAndId() {
       const result = []
       this.productList.forEach((item, index) => {
-        const product = item
-        result.push(product)
+        result.push(item)
         if (this.labelsData[index]) {
           result[index].label = this.labelsData[index]
         }
-        product.id += Date.now()
+        result[index].id += Date.now()
       })
       return result
     },
