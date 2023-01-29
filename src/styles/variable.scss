@@ -8,20 +8,15 @@ $light-gray: #d5d5d5;
 $main-red: #fc422d;
 
 // break-points
-$xs-min: 320px;
-$xs-min-avg: 345px;
-$xs-avg: 360px;
-$xs-mid: 375px;
-$xs-spec: 414px;
-$xs: 480px;
-$xs-large: 520px;
-$sm: 768px;
-$tablet-horizontal: 1024px;
+$xs-small: 320px;
+$xs-medium: 375px;
+$xs: 430px;
+$tablet-small: 744px;
+$tablet-medium: 834px;
+$tablet-large: 1024px;
 $md: 1280px;
-$lg: 1366px;
-$lg-large: 1440px;
-$xlg: 1600px;
-$xlg-max: 1920px;
+$lg: 1440px;
+$xlg: 1920px;
 
 //z-indexes
 $z-index-upper: 1;
@@ -34,10 +29,44 @@ $font-family-inter: 'Inter', 'Roboto', Arial, sans-serif !default;
 
 //mixins
 @mixin padding-base {
-  padding: 0 14%;
+  @media (max-width: $tablet-small - 1) {
+    padding: 0 9px;
+  }
+
+  @media (max-width: $xs - 1) {
+    padding: 0 26px;
+  }
+
+  @media (max-width: $xs-medium - 1) {
+    padding: 0 22px;
+  }
 }
 
 @mixin max-width {
   max-width: 1386px;
   margin: 0 auto;
+
+  @media (max-width: $xlg - 1) {
+    max-width: 1290px;
+  }
+
+  @media (max-width: $lg - 1) {
+    max-width: 1194px;
+  }
+
+  @media (max-width: $md - 1) {
+    max-width: 906px;
+  }
+
+  @media (max-width: $tablet-large - 1) {
+    max-width: 816px;
+  }
+
+  @media (max-width: $tablet-medium - 1) {
+    max-width: 658px;
+  }
+
+  @media (max-width: $tablet-small - 1) {
+    max-width: none;
+  }
 }

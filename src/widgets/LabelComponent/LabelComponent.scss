@@ -28,3 +28,31 @@
     right: 8px;
   }
 }
+
+@media (max-width: $xlg - 1) {
+  .label {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media (max-width: $tablet-large - 1) {
+  .label {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+
+@media (max-width: $tablet-medium - 1) {
+  .label {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media (max-width: $xs - 1) {
+  .label {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}

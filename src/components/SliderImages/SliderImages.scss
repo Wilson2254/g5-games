@@ -37,6 +37,11 @@
 
   &__wrapper {
     height: 294px;
+    position: relative;
+
+    .swiper-container::v-deep {
+      height: 100%;
+    }
   }
 
   &__item {
@@ -125,6 +130,148 @@
           cursor: default;
         }
       }
+    }
+  }
+}
+
+@media (max-width: $xlg - 1) {
+  .slider-images {
+    &__wrapper {
+      height: 272px;
+    }
+
+    &__navigation-wrapper-item::v-deep {
+      width: 40px;
+      height: 40px;
+
+      .arrow {
+        padding: 7px;
+      }
+
+      &.prev {
+        left: 8px;
+      }
+
+      &.next {
+        right: 8px;
+      }
+    }
+
+    &__pagination::v-deep {
+      margin-top: 8px;
+    }
+  }
+}
+
+@media (max-width: $lg - 1) {
+  .slider-images {
+    &__wrapper {
+      height: 250px;
+    }
+  }
+}
+
+@media (max-width: $md - 1) {
+  .slider-images {
+    &__wrapper {
+      height: 187px;
+    }
+
+    &__navigation-wrapper-item::v-deep {
+      width: 32px;
+      height: 32px;
+
+      .arrow {
+        padding: 6px;
+      }
+
+      &.prev {
+        .arrow {
+          margin-left: 6px;
+        }
+      }
+
+      &.next {
+        .arrow {
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet-large - 1) {
+  .slider-images {
+    &__wrapper {
+      height: 167px;
+    }
+  }
+}
+
+@media (max-width: $tablet-medium - 1) {
+  .slider-images {
+    &__wrapper {
+      height: 208px;
+    }
+  }
+}
+
+@media (max-width: $tablet-small - 1) {
+  .slider-images {
+    margin-top: 8px;
+
+    &__wrapper {
+      height: 130px;
+    }
+    &__navigation-wrapper-item::v-deep {
+      width: 24px;
+      height: 24px;
+
+      .arrow {
+        padding: 4px;
+        border-width: 0 1px 1px 0;
+      }
+
+      &.prev {
+        left: 8px;
+
+        .arrow {
+          margin-left: 4px;
+        }
+      }
+
+      &.next {
+        right: 8px;
+
+        .arrow {
+          margin-right: 4px;
+        }
+      }
+    }
+
+    &__pagination::v-deep {
+      margin-top: 8px;
+
+      .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
+}
+
+@media (max-width: $xs - 1) {
+  .slider-images {
+    &__wrapper {
+      height: 143px;
+    }
+  }
+}
+
+@media (max-width: $xs - 1) {
+  .slider-images {
+    &__pagination::v-deep {
+      margin-top: 4px;
     }
   }
 }

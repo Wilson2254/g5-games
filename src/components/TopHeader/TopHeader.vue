@@ -1,7 +1,9 @@
 <template>
   <div class="top-header">
     <div class="top-header__wrapper">
-      <header-logo />
+      <router-link class="logo" :to="{ name: 'HomePage' }">
+        <header-logo class="logo__image" />
+      </router-link>
       <button-component @click.native="updateProductList" />
     </div>
   </div>

@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       labelsData: [
-        { name: 'TOP', color: '#043563', positionClass: 'top left' },
+        { name: 'TOP', color: '#2884fc', positionClass: 'top left' },
         { name: 'SALE', color: '#fc4503', positionClass: 'top center' },
         { name: 'POPULAR', color: '#1c943a', positionClass: 'bottom right' },
       ],

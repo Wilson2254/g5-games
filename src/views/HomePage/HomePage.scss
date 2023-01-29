@@ -1,4 +1,4 @@
 .home-page {
-  //@include padding-base;
   @include max-width;
+  @include padding-base;
 }
