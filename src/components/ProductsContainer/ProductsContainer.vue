@@ -10,7 +10,7 @@
         thumbnail,
         title,
         label,
-      } in productListWithLabels"
+      } in productListWithLabelsAndId"
       :key="id"
       :card-brand="brand"
       :card-category="category"
@@ -49,13 +49,15 @@ export default {
     ProductCard,
   },
   computed: {
-    productListWithLabels() {
+    productListWithLabelsAndId() {
       const result = []
       this.productList.forEach((item, index) => {
-        result.push(item)
+        const product = item
+        result.push(product)
         if (this.labelsData[index]) {
           result[index].label = this.labelsData[index]
         }
+        product.id += Date.now()
       })
       return result
     },

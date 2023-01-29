@@ -33,10 +33,11 @@
     "import/no-extraneous-dependencies": "off",
     "no-plusplus": "off",
     "no-await-in-loop": "off",
+    "operator-assignment": "off",
     "no-param-reassign": ["error", {
       "props": true,
       "ignorePropertyModificationsFor": [
-        "state" // for vuex mutations
+        "state"
       ]
     }],
     "vue/attributes-order": [
