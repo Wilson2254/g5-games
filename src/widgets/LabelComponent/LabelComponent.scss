@@ -1,0 +1,30 @@
+.label {
+  position: absolute;
+  color: $default-white;
+  padding: 4px 16px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+
+  &.top {
+    top: 8px;
+  }
+
+  &.left {
+    left: 8px;
+  }
+
+  &.center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.bottom {
+    bottom: 8px;
+  }
+
+  &.right {
+    right: 8px;
+  }
+}

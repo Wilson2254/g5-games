@@ -1,12 +1,20 @@
 <template>
   <div class="product-card">
     <div class="product-card__wrapper">
-      <img
-        class="product-card__image"
-        :src="cardImage"
-        :alt="cardName"
-        loading="lazy"
-      />
+      <div class="product-card__image-wrapper">
+        <label-component
+          v-if="cardLabel"
+          :label-name="cardLabel.name"
+          :label-color="cardLabel.color"
+          :label-style:="cardLabel.positionClass"
+        />
+        <img
+          class="product-card__image"
+          :src="cardImage"
+          :alt="cardName"
+          loading="lazy"
+        />
+      </div>
       <div class="product-card__element-wrapper product-card__brand">
         <span class="product-card__title-element bold">Brand: </span>
         <span class="product-card__value-element">{{ cardBrand }} </span>
@@ -36,8 +44,13 @@
 </template>
 
 <script>
+import LabelComponent from '../../widgets/LabelComponent/LabelComponent.vue'
+
 export default {
   name: 'ProductCard',
+  components: {
+    LabelComponent,
+  },
   props: {
     cardBrand: {
       type: String,
@@ -62,6 +75,14 @@ export default {
     cardName: {
       type: String,
       default: 'Not available',
+    },
+    cardLabel: {
+      type: Object,
+      default: () => ({
+        name: '',
+        color: '',
+        positionClass: '',
+      }),
     },
   },
   data() {

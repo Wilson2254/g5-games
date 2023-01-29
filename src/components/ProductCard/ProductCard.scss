@@ -1,5 +1,6 @@
 .product-card {
   cursor: pointer;
+  position: relative;
 
   &:hover {
     .product-card__wrapper {
@@ -12,6 +13,10 @@
     padding: 9px;
     border-radius: 4px;
     transition: $default-transition;
+  }
+
+  &__image-wrapper {
+    position: relative;
   }
 
   &__image {

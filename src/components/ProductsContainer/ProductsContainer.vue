@@ -9,7 +9,8 @@
         stock,
         thumbnail,
         title,
-      } in productList"
+        label,
+      } in productListWithLabels"
       :key="id"
       :card-brand="brand"
       :card-category="category"
@@ -17,12 +18,14 @@
       :stock-count="stock"
       :card-image="thumbnail"
       :card-name="title"
+      :card-label="label"
     />
   </div>
 </template>
 
 <script>
-import ProductCard from '../ProductCard/ProductCard.vue'
+const ProductCard = () =>
+  import(/* webpackChunkName: "ProductCard" */ '../ProductCard/ProductCard.vue')
 
 export default {
   name: 'ProductsContainer',
@@ -33,8 +36,29 @@ export default {
       default: () => [],
     },
   },
+  data() {
+    return {
+      labelsData: [
+        { name: 'TOP', color: '#043563', positionClass: 'top left' },
+        { name: 'SALE', color: '#fc4503', positionClass: 'top center' },
+        { name: 'POPULAR', color: '#1c943a', positionClass: 'bottom right' },
+      ],
+    }
+  },
   component: {
     ProductCard,
+  },
+  computed: {
+    productListWithLabels() {
+      const result = []
+      this.productList.forEach((item, index) => {
+        result.push(item)
+        if (this.labelsData[index]) {
+          result[index].label = this.labelsData[index]
+        }
+      })
+      return result
+    },
   },
 }
 </script>
