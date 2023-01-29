@@ -4,11 +4,13 @@
       :slider-items="imagesList"
       :is-slider-loading="imagesSliderLoading"
     />
-    <product-container :product-list="productList" />
+    <product-container :product-list="productListData" />
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+
 // components
 import SliderImages from '../../components/SliderImages/SliderImages.vue'
 import ProductContainer from '../../components/ProductsContainer/ProductsContainer.vue'
@@ -16,11 +18,10 @@ import ProductContainer from '../../components/ProductsContainer/ProductsContain
 // utilits
 import { checkFileType } from '../../utils/fileTypeChecker'
 import { cookieGet, cookieSet } from '../../utils/cookieManipulation'
-import { getLocalItem, setLocalItem } from '../../utils/localStorage'
+import { getLocalItem } from '../../utils/localStorage'
 
 // api
 import { fetchSliderImages } from '../../api/resources/images'
-import { fetchProducts } from '../../api/resources/products'
 
 // constans
 import { SLIDER_IMAGES_LIMIT } from '../../constans/index'
@@ -35,14 +36,28 @@ export default {
     return {
       imagesList: [],
       imagesSliderLoading: true,
-      productList: [],
+      productsListInit: [],
     }
+  },
+  computed: {
+    ...mapGetters({
+      productsListStore: 'productsData/productsList',
+    }),
+    productListData() {
+      if (this.productsListStore.length) {
+        return this.productsListStore
+      }
+      return this.productsListInit
+    },
   },
   created() {
     this.fillImageList()
     this.getProducts()
   },
   methods: {
+    ...mapActions({
+      fetchProductList: 'productsData/fetchProductList',
+    }),
     async getSliderImage() {
       const { url } = await fetchSliderImages()
       return url
@@ -70,11 +85,10 @@ export default {
     async getProducts() {
       const localStorageProducts = getLocalItem('productList')
       if (localStorageProducts) {
-        this.productList = localStorageProducts
+        this.productsListInit = localStorageProducts
         return
       }
-      const { products: responseProductList } = await fetchProducts()
-      setLocalItem('productList', responseProductList)
+      await this.fetchProductList()
     },
   },
 }
