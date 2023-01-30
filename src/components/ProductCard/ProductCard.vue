@@ -9,8 +9,8 @@
           :label-style="cardLabel.positionClass"
         />
         <img
+          v-lazy="cardImage"
           class="product-card__image"
-          :src="cardImage"
           :alt="cardName"
           loading="lazy"
         />

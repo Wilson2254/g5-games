@@ -1,9 +1,6 @@
 <template>
   <div class="home-page">
-    <slider-images
-      :slider-items="imagesList"
-      :is-slider-loading="imagesSliderLoading"
-    />
+    <slider-images :slider-items="imagesList" />
     <product-container :product-list="productListData" />
   </div>
 </template>
@@ -35,7 +32,6 @@ export default {
   data() {
     return {
       imagesList: [],
-      imagesSliderLoading: true,
       productsListInit: [],
     }
   },
@@ -67,7 +63,6 @@ export default {
 
       if (imagesFromCookie) {
         this.imagesList = JSON.parse(imagesFromCookie)
-        this.imagesSliderLoading = false
         return
       }
 
@@ -75,7 +70,6 @@ export default {
         const imageURL = await this.getSliderImage()
 
         if (checkFileType(imageURL)) {
-          this.imagesSliderLoading = false
           this.imagesList.push(imageURL)
         }
       }

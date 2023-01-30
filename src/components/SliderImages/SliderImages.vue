@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="slider-images"
-    :class="{ 'slider-images--loading': isSliderLoading }"
-  >
+  <div class="slider-images">
     <div class="slider-images__wrapper">
       <swiper :options="swiperOptions">
         <swiper-slide
@@ -11,9 +8,9 @@
           class="slider-images__item"
         >
           <img
+            v-lazy="item"
             class="slider-images__item-img"
             loading="lazy"
-            :src="item"
             :alt="`Изображение собаки ${index + 1}`"
           />
         </swiper-slide>
@@ -42,10 +39,6 @@ export default {
     sliderItems: {
       type: Array,
       default: () => [],
-    },
-    isSliderLoading: {
-      type: Boolean,
-      default: true,
     },
   },
   data() {
@@ -79,5 +72,4 @@ export default {
   },
 }
 </script>
-
 <style scoped lang="scss" src="./SliderImages.scss" />
