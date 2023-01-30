@@ -4,7 +4,11 @@
       <router-link class="logo" :to="{ name: 'HomePage' }">
         <header-logo class="logo__image" />
       </router-link>
-      <button-component @click.native="updateProductList" />
+      <button-component
+        label-helper="Обновить продукты"
+        btn-text="Update Products"
+        @click.native="updateProductList"
+      />
     </div>
   </div>
 </template>

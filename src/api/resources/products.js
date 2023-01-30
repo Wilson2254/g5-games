@@ -1,5 +1,6 @@
 import api from '../http-client'
 
+// Получение товаров
 async function fetchProducts() {
   try {
     const response = await api.get('https://dummyjson.com/products?limit=100')
