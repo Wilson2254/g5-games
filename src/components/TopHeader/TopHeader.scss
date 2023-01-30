@@ -1,0 +1,58 @@
+.top-header {
+  background-color: $main-blue;
+  width: 100%;
+  height: 48px;
+
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include max-width;
+    @include padding-base;
+  }
+
+  .logo {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: $xlg - 1) {
+  .logo {
+    &__image {
+      transform: scale(1.1) translateX(5%);
+    }
+  }
+}
+
+@media (max-width: $lg - 1) {
+  .logo {
+    &__image {
+      transform: scale(1.2) translateX(10%);
+    }
+  }
+}
+
+@media (max-width: $md - 1) {
+  .logo {
+    &__image {
+      transform: scale(1.3) translateX(15%);
+    }
+  }
+}
+
+@media (max-width: $tablet-large - 1) {
+  .logo {
+    &__image {
+      transform: scale(1.4) translateX(15%);
+    }
+  }
+}
+
+@media (max-width: $tablet-medium - 1) {
+  .top-header {
+    &__wrapper {
+      display: none;
+    }
+  }
+}

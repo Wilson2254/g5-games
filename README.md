@@ -1,24 +1,67 @@
-# g5-games
+# Реализация проекта для g5
 
-## Project setup
+## Детали реализации
+Проект реализован на Vue CLI с целью экономии времени.
+Настроен eslint и prettier. В стилях используется методология БЭМ.
+Придерживание accessibility принципа в верстке + 
+небольшой анализ и улучшение CLS метрики webVitals.
+Максимальная декомпозиция компонентов и бизнес-логики.
+
+## Основные технологии
+- Vue 2 (CLI)
+- Scss
+- Vue Router
+- Vuex
+- Axios
+- Vue-Lazyload
+- Swiper
+- Различные конфиги и лоадеры для корректной работы сборщика и eslint
+
+## Структура проекта
+
+**src** - корень для девелоп работы
+
+**api** - слой для взаимодействия с запросами (axios)
+
+**assets** - шрифты Inter (woff и woff2) и изображения
+(SVG файлы предварительно пропущены через минификатор -
+https://jakearchibald.github.io/svgomg/ и подлючены с помощью лоадера)
+
+**components** - теоретически переиспользуемые части в проекте.
+Компонент делится на vue и scoped scss файл.
+
+**constans** - различные константы для проекта
+
+**navigation** - слой для настройки маршрутизации (Vue Router)
+
+**stores** - слой для работы с хранилищем (Vuex) - разбиты на модули
+
+**styles** - файл с общими стилями (переменные для проекта, шрифты,
+базовые стили)
+
+**utils** - вспомогательные сервисы по проекту
+
+**views** - разделы-роуты (в текущем проекте только HomePage)
+
+**widgets** - различные UI элементы, нее имеющие сложную логику,
+а-ля элементы для StoryBook
+
+**App.vue** - стартовый компоненты
+
+**main.js** - точка входа приложения
+
+## Не забыть установить пакеты  
 ```
-npm install
+npm i
 ```
 
-### Compiles and hot-reloads for development
+## Запуск в девелоп режиме
 ```
-npm run serve
+npm run dev
 ```
 
-### Compiles and minifies for production
+## Сборка
 ```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

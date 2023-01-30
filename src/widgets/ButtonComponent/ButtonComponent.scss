@@ -1,0 +1,38 @@
+.button {
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: 1px solid $default-white;
+  cursor: pointer;
+  background-color: $default-white;
+  font-weight: 600;
+  transition: $default-transition;
+  font-size: 12px;
+  line-height: 15px;
+  font-family: $font-family-inter;
+
+  &:hover {
+    border: 1px solid $dark-gray;
+    opacity: 0.9;
+  }
+}
+
+@media (max-width: $xlg - 1) {
+  .button {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+@media (max-width: $lg - 1) {
+  .button {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media (max-width: $md - 1) {
+  .button {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
